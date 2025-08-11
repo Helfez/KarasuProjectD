@@ -1,0 +1,5 @@
+{
+  "build_command": "echo 'Building monorepo'",
+  "install_command": "npm install",
+  "framework": "static"
+}

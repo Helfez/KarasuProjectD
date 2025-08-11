@@ -4,35 +4,24 @@
     {
       "name": "frontend",
       "type": "nodejs",
-      "buildCommand": "cd apps/frontend && npm run build",
-      "startCommand": "cd apps/frontend && npm start",
+      "rootDirectory": "apps/frontend",
+      "buildCommand": "npm install && npm run build",
+      "startCommand": "npm start",
       "port": 3000,
       "env": {
-        "NODE_ENV": "production",
-        "NEXT_PUBLIC_API_URL": "${BACKEND_URL}"
+        "NODE_ENV": "production"
       }
     },
     {
-      "name": "backend",
+      "name": "backend", 
       "type": "python",
-      "buildCommand": "cd apps/backend && pip install -r requirements.txt",
-      "startCommand": "cd apps/backend && uvicorn main:app --host 0.0.0.0 --port 8000",
+      "rootDirectory": "apps/backend",
+      "buildCommand": "pip install -r requirements.txt",
+      "startCommand": "uvicorn main:app --host 0.0.0.0 --port 8000",
       "port": 8000,
       "env": {
-        "ENVIRONMENT": "production",
-        "DATABASE_URL": "${POSTGRES_URL}",
-        "REDIS_URL": "${REDIS_URL}"
+        "ENVIRONMENT": "production"
       }
-    }
-  ],
-  "databases": [
-    {
-      "name": "postgres",
-      "type": "postgresql"
-    },
-    {
-      "name": "redis",
-      "type": "redis"
     }
   ]
 }
