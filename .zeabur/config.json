@@ -1,0 +1,19 @@
+{
+  "services": [
+    {
+      "name": "frontend",
+      "source": {
+        "type": "git",
+        "repoID": "KarasuProjectD",
+        "branchName": "main"
+      },
+      "template": {
+        "type": "nextjs"
+      },
+      "env": {
+        "NEXT_PUBLIC_API_URL": "https://backend.zeabur.app"
+      },
+      "rootDirectory": "apps/frontend"
+    }
+  ]
+}
